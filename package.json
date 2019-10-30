@@ -1,0 +1,47 @@
+{
+    "name": "gjs",
+    "displayName": "Gjs",
+    "description": "Gjs support",
+    "version": "0.0.1",
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "tslint -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "javascript",
+                "aliases": [
+                    "Gjs JavaScript",
+                    "javascript"
+                ],
+                "extensions": [
+                    ".js"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "javascript",
+                "scopeName": "source.js",
+                "path": "./syntaxes/js.tmLanguage"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.0",
+        "@types/vscode": "^1.39.0",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.4"
+    }
+}
